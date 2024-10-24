@@ -1,6 +1,6 @@
 import 'cypress-file-upload';
 
-describe("Admin", () => {
+describe("AddProduct", () => {
     beforeEach(() => {
         Cypress.on('uncaught:exception', (err, runnable) => {
             return false
