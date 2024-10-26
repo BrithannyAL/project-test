@@ -1,4 +1,5 @@
-describe('Login', function () {
+describe('Forms Login', function () {
+    
     beforeEach(function () {
         Cypress.on('uncaught:exception', (err, runnable) => {
             return false
@@ -6,7 +7,7 @@ describe('Login', function () {
         cy.visit('http://localhost:8080/shopping-cart/login.jsp');
     });
 
-    it('Login existoso', function () {
+    it('PR031- Iniciar Sesión', function () { // Prueba con usuario valido
 
         cy.get('input[name="username"]').type('guest@gmail.com').should('have.value', 'guest@gmail.com');
         cy.get('input[name="password"]').type('guest').should('have.value', 'guest');
