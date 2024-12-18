@@ -26,13 +26,13 @@ describe('Stock Products', function () {
         cy.xpath('/html/body/nav/div/div[2]/ul/li[6]/ul/li[2]/a').click()
 
         //Ingresar el id del producto
-        cy.get('input[name="prodid"]').type('P20230423084149').should('have.value', 'P20230423084149');
+        cy.get('input[name="prodid"]').type('P20230423084152').should('have.value', 'P20230423084152');
 
         // Presionar el botón de eliminar
         cy.xpath('/html/body/div[2]/div/form/div[4]/div[2]/button').click();
 
         // Verificar que se haya eliminado TODO: Cambiar por mensaje de exito \n\t\t\t\t\t\tProduct Removed Successfully!\n\t\t\t\t\t
-        cy.xpath('/html/body/div[2]/div/form/div[1]/p').should('have.text','\n\t\t\t\t\t\tProduct Removal Failed!\n\t\t\t\t\t');
+        cy.xpath('/html/body/div[2]/div/form/div[1]/p').should('have.text','\n\t\t\t\t\t\tProduct Removed Successfully!\n\t\t\t\t\t');
 
     
         });

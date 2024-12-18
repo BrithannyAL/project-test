@@ -168,7 +168,8 @@ describe("AddProduct Form", () => {
         cy.xpath('/html/body/div[2]/div/form/div[1]/p').should('not.exist');
     });
 
-    it('PR0054 - No agrega producto con descripción vacía y valores numéricos', () => {
+    //TODO: Cambiar la el código en el documento
+    it('PR0054 - Se agrega producto con descripción vacía y valores numéricos en cero', () => {
         // Se inicia sesión
         cy.get('input[name="username"]').type('admin@gmail.com').should('have.value', 'admin@gmail.com');
         cy.get('input[name="password"]').type('admin').should('have.value', 'admin');
@@ -188,7 +189,7 @@ describe("AddProduct Form", () => {
         cy.get('input[type="file"]').attachFile('img.jpg');
     
         cy.xpath('/html/body/div[2]/div/form/div[7]/div[2]/button').click();
-        cy.xpath('/html/body/div[2]/div/form/div[1]/p').should('not.exist');
+        cy.xpath('/html/body/div[2]/div/form/div[1]/p').should('contain.text', 'Product Added Successfully');
     });
 
     it('PR0055 - No agrega producto con cantidad invalida', () => {
